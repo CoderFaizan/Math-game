@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="gameOver" id="gameOverBox">
+        <p id="gameover">GameOver</p>
+        <p id="hScore"></p>
+        <div class="button">
+            <button style="margin: auto;" id="resetBtn">Reset</button>
+
+        </div>
+    </div>
+    <div class="main">
+        <h2>Math Game</h2>
+        <div class="board">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="tf" id="tf">True</div>
+            <div class="showHighScore">HighScore: <span id="showHighScore">0</span></div>
+            <div class="question">
+                <span id="f"></span>
+                <span id="o"></span>
+                <span id="s"></span>
+            </div>
+            <div class="hint">
+                    Choose The Correct Answer
+            </div>
+            <div class="answer">
+                <span class="answer1" id="answer1" onclick="chk(1)"></span>
+                <span class="answer2" id="answer2" onclick="chk(2)"></span>
+                <span class="answer3" id="answer3" onclick="chk(3)"></span>
+                <span class="answer4" id="answer4" onclick="chk(4)"></span>
+            </div>
+            <div class="button" id="startbtn">
+                <button id="skip">Skip</button>
+                <button id="start">Start Game</button>
+            </div>
+            <div class="time">Time: <span id="time">0</span></div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="script.js"></script>

@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: #dde2e3;
+}
+.main{
+    position: relative;
+    width: 500px;
+    margin: 100px auto 0 auto;
+    text-align: center;
+}
+.score{
+    background-color: #c5d750;
+    position: absolute;
+    width: 100px;
+    right: 10px;
+    top: 70px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    margin-left: auto;
+}
+.showHighScore{
+    background-color: #aaaad3;
+    position: absolute;
+    width: 120px;
+    top: 70px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    margin-right: auto;
+    font-size: 16px;
+}
+.main h2{
+    font-size: 40px;
+    color: #2c2e9a;
+}
+.board{
+    background-color: #4d74df;
+    height: 350px;
+    margin-top: 20px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    padding: 10px;
+}
+.question{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    background-color: #abd7ec;
+    width: 80%;
+    margin: 20px auto 30px auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+}
+.hint{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    background-color: #75ba26;
+    width: 80%;
+    border-radius: 10px;
+    line-height: 50px;
+    font-size: 25px;
+    height: 50px;
+    margin: auto;
+}
+.answer{
+    display: flex;
+    align-items: center;
+    /* background-color: palegreen; */
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-top: 30px;
+}
+.answer1,.answer2,.answer3,.answer4{
+    
+    margin: 20px auto 30px auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    background-color: olive;
+    width: 60px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, .8);
+    opacity: .9;
+}
+.answer1:hover,.answer2:hover,.answer3:hover,.answer4:hover{
+    background-color: #4b4ecc;
+    color: white;
+    transition: ease .5s background-color, color;
+    cursor: pointer;
+}
+.button button{
+    background-color: #9837ae;
+    width: 100px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 18px;
+    color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: #b739e9;
+    cursor: pointer;
+    transition: ease .5s background-color, color;
+}
+.time{
+    background-color: #e4c6f0;
+
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.gameOver{
+    background-color: #304f96;
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 200px;
+    left: 530px;
+    box-sizing: border-box;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.gameOver #gameover{
+    text-align: center;
+    display: inline-block;
+    /* background-color: red; */
+    width: 100%;
+    color: white;
+    font-size: 36px;
+    }
+#hScore{
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    }
+#resetBtn{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+.tf{
+    background-color: green;
+    width: 90px;
+    margin: auto;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+
+}
+#skip{
+    margin: 30px auto;
+}
