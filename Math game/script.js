@@ -1,6 +1,6 @@
 var playing = false;
 var score=0;
-var timeRemaining=30;
+var timeRemaining=40;
 var action;
 var correctAnswer=null;
 var operator=null;
