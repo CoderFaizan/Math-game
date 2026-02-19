@@ -8,7 +8,7 @@ var game=true;
 var startBtn = document.getElementById("start");
 var resetBtn = document.getElementById("resetBtn");
 var skipBtn = document.getElementById("skip");
-var highScore = localStorage.getItem("highscore");
+var highScore = localStorage.getItem("highscore") || 0;
 hide("gameOverBox");
 hide("tf");
 hide("skip");
@@ -17,7 +17,7 @@ SetText("answer2","");
 SetText("answer3","");
 SetText("answer4","");
 SetText("showHighScore",highScore);
-SetText("hScore","HightScore:"+highScore);
+SetText("hScore","High Score: " + highScore);
 startBtn.addEventListener("click",function(){
     startGame();
     generateQuestion();
@@ -40,50 +40,40 @@ function startGame(){
     show("skip");
 }
 function skipQuestion(){
-    // timeStart();
-    hide("start");
-    show("skip");
     generateQuestion();
 }
 function ResetGame(){
-    timeStart();
     location.reload();
-    game=true;
-    timeRemaining=30;
-    hide("gameOverBox");
-    hide("start");
-    show("skip");
 }
 function timeStart(){
-   var action =  setInterval(function(){
-       if(game==true)
-       {timeRemaining-=1;}
+    action = setInterval(function(){
+        if(game == true) {
+            timeRemaining -= 1;
+        }
         document.getElementById("time").innerHTML = timeRemaining;
-            if(timeRemaining == 0)
-            {//game over
-                stopCountDown(action);
-                show("gameOverBox");
-                game=false;
-                    if(score>highScore){
-        localStorage.setItem("highscore",score);}
-                // hide("time");
-                // hide("right");
-                // hide("wrong");
-                // playing=false;
+        if(timeRemaining == 0) {
+            // game over
+            stopCountDown(action);
+            show("gameOverBox");
+            game = false;
+            if(score > highScore){
+                localStorage.setItem("highscore", score);
+                SetText("hScore", "High Score: " + score);
             }
-        },1100);
+        }
+    }, 1000);
 }
 function stopCountDown(action){
                 clearInterval(action);
 }
 function generateQuestion(){
+    // Clear previous feedback
+    var feedback = document.getElementById("tf");
+    feedback.classList.remove("correct", "incorrect");
 
-    setTimeout(
-        function(){
-            hide("tf");
-        }
-        
-        ,2000);
+    setTimeout(function(){
+        hide("tf");
+    }, 2000);
     
 
     var first = Math.round(Math.random()*10);    
@@ -152,19 +142,19 @@ function SetText(id,txt){
 }    
 
 function chk(value){
-    var trueAnswer = document.getElementById("answer"+value).innerText;
+    var selectedAnswer = document.getElementById("answer" + value).innerText;
+    var feedback = document.getElementById("tf");
 
-    if(trueAnswer==correctAnswer){
+    if(parseInt(selectedAnswer) == correctAnswer){
         show("tf");
-        SetBg("tf","Green");
-        SetText("tf","True");
+        feedback.classList.add("correct");
+        SetText("tf", "Correct!");
         generateQuestion();
         score++;
-        SetText("score",score);
-    }
-    else{
+        SetText("score", score);
+    } else {
         show("tf");
-        SetBg("tf","red");
-        SetText("tf","False");
+        feedback.classList.add("incorrect");
+        SetText("tf", "Incorrect!");
     }
 }
